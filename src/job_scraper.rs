@@ -36,8 +36,6 @@ impl JobScraper {
     }
 
     async fn scrape_single_iteration(&self) -> Result<()> {
-        // self.login("anthonyc.animba@gmail.com", "Ar$enal.27")
-        //     .await?;
         self.verify_login().await?;
         tokio::time::sleep(Duration::from_secs(2)).await;
         self.click_discovery_card().await?;
